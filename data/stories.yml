@@ -1,0 +1,66 @@
+version: "2.0"
+
+stories:
+
+- story: greet user
+  steps:
+  - intent: greet
+  - action: utter_greet
+
+- story: say good bye
+  steps:
+  - intent: greet
+  - action: utter_greet
+
+- story: display location
+  steps:
+  - intent: my_place
+  - action: utter_my_place
+
+
+- story: interactive_story_1
+  steps:
+  - intent: weather
+    entities:
+    - location: kathmandu
+  - action: action_get_weather
+
+- story: interactive_story_2
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: weather
+    entities:
+    - location: bhaktapur
+  - action: action_get_weather
+
+- story: interactive_story_1
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: weather
+    entities:
+    - location: kathmandu
+  - slot_was_set:
+    - location: kathmandu
+  - action: action_get_weather
+  - intent: my_place
+  - action: utter_my_place
+  - intent: greet
+  - action: utter_greet
+  - intent: weather
+    entities:
+    - location: pokhara
+  - slot_was_set:
+    - location: pokhara
+
+- story: interactive_story_1
+  steps:
+  - intent: weather
+    entities:
+    - location: kathmandu
+  - slot_was_set:
+    - location: kathmandu
+  - action: action_get_weather
+  - intent: location_weather
+  - action: action_get_my_location_weather

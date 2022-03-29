@@ -1,0 +1,30 @@
+version: '2.0'
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true
+intents:
+- weather
+- location_weather
+- greet
+- my_place
+- goodbye
+entities:
+- location
+slots:
+  location:
+    type: text
+    influence_conversation: true
+responses:
+  utter_greet:
+  - text: Hey! How are you?
+  utter_get_weather:
+  - text: The weather
+  utter_goodbye:
+  - text: Bye
+  utter_my_place:
+  - text: Your location is {location}
+actions:
+- action_get_my_location_weather
+- action_get_weather
+- utter_greet
+- utter_my_place

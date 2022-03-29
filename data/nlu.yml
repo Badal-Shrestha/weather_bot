@@ -1,0 +1,57 @@
+version: "2.0"
+nlu:
+- intent: greet
+  examples: |
+    - hey
+    - hello
+    - hi
+    - hello there
+    - good morning
+    - good evening
+    - moin
+    - hey there
+    - let's go
+    - hey dude
+    - goodmorning
+    - goodevening
+    - good afternoon
+- intent: goodbye
+  examples: |
+    - good afternoon
+    - cu
+    - good by
+    - cee you later
+    - good night
+    - bye
+    - goodbye
+    - have a nice day
+    - see you around
+    - bye bye
+    - see you later
+- intent: weather
+  examples: |
+    - [ktm]{"entity": "location", "value": "kathmandu"} ko masuam
+    - weather [Kathmandu]{"entity": "location", "value": "kathmandu"}
+    - weather of [kathmandu](location)
+    - weather of [pokhara](location)
+    - weather of [bhaktapur](location)
+    - weather of [ktm]{"entity": "location", "value": "kathmandu"}
+    - weather of [kathmandu](location)
+    
+- intent: my_place
+  examples: |
+    - where do i live
+    - my current location
+    - my location
+    - my address
+    - what is my location
+
+- intent: location_weather
+  examples: |
+    - weather of my location
+    - weather of my place
+    - weather of my loaction
+- synonym: kathmandu
+  examples: |
+    - ktm
+    - Kathmandu

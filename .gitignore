@@ -1,0 +1,4 @@
+models/*
+test.py
+actions/__pycache__/*
+
